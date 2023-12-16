@@ -1,0 +1,12 @@
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Target = usr/lib/modules/6.1.31-1+/*
+Target = usr/lib/modules/extramodules-6.1-opi/*
+
+[Action]
+Description = Updating linux-opi module dependencies...
+When = PostTransaction
+Exec = /usr/bin/depmod 6.1.31-1+
